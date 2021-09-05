@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { TextField, Button, Container } from "@material-ui/core";
+import { TextField, Button, Container, Typography } from "@material-ui/core";
 import useStyles from "./loginStyle";
-import { validation } from "./loginFunctions";
+import { validation } from "./utils";
 const Login: React.FC = () => {
   const [values, setValues] = useState({
     username: "",
@@ -25,8 +25,13 @@ const Login: React.FC = () => {
   return (
     <>
       <div className={classes.root}>
-        <Container maxWidth="xs">
-          <h2> Sign in </h2>
+        <Container maxWidth="xs" classes={{ root: classes.MuiContainerRoot }}>
+          <Typography
+            variant="h2"
+            classes={{ root: classes.MuiTypographyRoot }}
+          >
+            Sign in
+          </Typography>
           <form onSubmit={submitHandler}>
             <TextField
               type="text"
@@ -35,10 +40,10 @@ const Login: React.FC = () => {
               value={values.username}
               onChange={handleInputChange}
               id="nameInput"
-              className={classes.textFieldRoot}
               placeholder="Enter username"
-              InputProps={{
-                className: classes.input,
+              classes={{ root: classes.textFieldRoot }}
+              InputLabelProps={{
+                className: classes.inputLabel,
               }}
             />
             {errors.username ? (
@@ -53,8 +58,8 @@ const Login: React.FC = () => {
               id="passInput"
               className={classes.textFieldRoot}
               placeholder="Enter password"
-              InputProps={{
-                className: classes.input,
+              InputLabelProps={{
+                className: classes.inputLabel,
               }}
             />
             {errors.password ? (

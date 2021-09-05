@@ -8,13 +8,19 @@ const Navbar: React.FC = () => {
     <AppBar position="static">
       <CssBaseline />
       <Toolbar>
-        <Typography variant="h4" className={classes.root}>
+        <Typography variant="h4" classes={{ root: classes.MuiTypographyRoot }}>
           Navbar
         </Typography>
         <div className={classes.linksRoot}>
-          <Link to="/Products">Products</Link>
-          <Link to="/Categories">Categories</Link>
-          <Link to="/Expenses">Expenses</Link>
+          <Link to="/Products" className={classes.links}>
+            Products
+          </Link>
+          <Link to="/Categories" className={classes.links}>
+            Categories
+          </Link>
+          <Link to="/Expenses" className={classes.links}>
+            Expenses
+          </Link>
         </div>
       </Toolbar>
     </AppBar>
