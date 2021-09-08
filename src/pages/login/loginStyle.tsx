@@ -6,7 +6,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    backgroundImage: `linear-gradient(to top, #30cfd0 0%, #330867 100%)`,
+    backgroundImage: `linear-gradient(to top, #cc208e 0%, #6713d2 100%)`,
   },
   MuiContainerRoot: {
     backgroundColor: theme.palette.background.default,
@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
       display: "block",
       height: "20px",
       marginTop: theme.spacing(-3),
-      color: theme.palette.success.light,
+      color: theme.palette.secondary.dark,
     },
   },
   textFieldRoot: {
@@ -55,8 +55,7 @@ const useStyles = makeStyles((theme) => ({
     width: "50%",
     marginLeft: "25%",
     textTransform: "uppercase",
-    backgroundImage:
-      "linear-gradient(to right, #1A2980 0%, #26D0CE  51%, #1A2980  100%)",
+    backgroundImage: "linear-gradient(to right, #6713d2 0%, #cc208e 100%)",
     color: theme.palette.primary.contrastText,
     backgroundSize: "200% auto",
     transition: theme.transitions.easing.easeIn,

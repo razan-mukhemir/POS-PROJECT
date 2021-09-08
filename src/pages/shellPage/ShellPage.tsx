@@ -1,10 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Navbar from "../../components/Navbar";
 import Products from "../products/Products";
 import Categories from "../categories/Categories";
 import Expenses from "../expenses/Expenses";
-
+import Navbar from "../../components/navbar/Navbar";
 const ShellPage: React.FC = () => {
   return (
     <Router>
