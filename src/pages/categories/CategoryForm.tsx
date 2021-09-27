@@ -35,29 +35,35 @@ export default function CategoryForm(props: any) {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setErrors(categoryNameValidate(values, categories));
-    if (editOrAdd === "edit") {
-      onSubmit({ ...values, categoryName: values.categoryName });
-      resetForm();
-    } else if (editOrAdd === "add") {
-      let currentDatetime = new Date();
-      let c = {
-        id: Math.floor((1 + Math.random()) * 0x10000),
-        categoryName: values.categoryName,
-        createdAt:
-          currentDatetime.getFullYear() +
-          "/" +
-          addLeadingZeros(currentDatetime.getMonth() + 1) +
-          "/" +
-          addLeadingZeros(currentDatetime.getDate()) +
-          " " +
-          addLeadingZeros(currentDatetime.getHours()) +
-          ":" +
-          addLeadingZeros(currentDatetime.getMinutes()) +
-          ":" +
-          addLeadingZeros(currentDatetime.getSeconds()),
-      };
-      onSubmit(c);
-      resetForm();
+    /*console.log(values);
+    console.log(categories);
+    console.log(errors.categoryName);
+    console.log(values.categoryName);*/
+    if (errors.categoryName) {
+      if (editOrAdd === "edit") {
+        onSubmit({ ...values, categoryName: values.categoryName });
+        resetForm();
+      } else if (editOrAdd === "add") {
+        let currentDatetime = new Date();
+        let c = {
+          id: Math.floor((1 + Math.random()) * 0x10000),
+          categoryName: values.categoryName,
+          createdAt:
+            currentDatetime.getFullYear() +
+            "/" +
+            addLeadingZeros(currentDatetime.getMonth() + 1) +
+            "/" +
+            addLeadingZeros(currentDatetime.getDate()) +
+            " " +
+            addLeadingZeros(currentDatetime.getHours()) +
+            ":" +
+            addLeadingZeros(currentDatetime.getMinutes()) +
+            ":" +
+            addLeadingZeros(currentDatetime.getSeconds()),
+        };
+        onSubmit(c);
+        resetForm();
+      }
     }
   };
 
