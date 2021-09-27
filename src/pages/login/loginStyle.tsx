@@ -44,12 +44,6 @@ const useStyles = makeStyles((theme) => ({
     fontSize: theme.typography.fontSize * 1.5,
     fontWeight: theme.typography.fontWeightBold,
   },
-  errors: {
-    color: theme.palette.error.dark,
-    fontSize: theme.typography.fontSize * 0.95,
-    fontWeight: theme.typography.fontWeightBold,
-    marginTop: theme.spacing(-1),
-  },
   loginBtn: {
     height: "50px",
     width: "50%",

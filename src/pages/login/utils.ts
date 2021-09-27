@@ -46,7 +46,6 @@ export const validation = (values: UserInputProps) => {
       }
     }
     localStorage.setItem("usersList", JSON.stringify(users));
-    console.log(values);
   }
 
   return errors;
