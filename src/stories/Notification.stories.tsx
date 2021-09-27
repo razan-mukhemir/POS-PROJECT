@@ -1,4 +1,4 @@
-import Notification from "../components/Notification";
+import Notification from "../components/notification/Notification";
 
 export default {
   title: "dialogs/Notification",

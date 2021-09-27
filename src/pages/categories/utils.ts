@@ -8,13 +8,11 @@ export const categoryNameValidate = (
   values: CategoryInputProps,
   categories: CategoryInputProps[]
 ) => {
-  debugger;
   let errors = { categoryName: "", createdAt: "" };
   let uniqeName = categories.find((c) => {
     // eslint-disable-next-line @typescript-eslint/no-unused-expressions
     return c.categoryName === values.categoryName;
   });
-  console.log(uniqeName);
   if (values.categoryName === "")
     errors.categoryName = REQUIRED_CATEGORY_NAME_ERROR_MSG;
   else if (uniqeName?.id) errors.categoryName = UNIQUE_CATEGORY_NAME;

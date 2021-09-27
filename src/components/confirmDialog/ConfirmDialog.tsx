@@ -5,40 +5,12 @@ import {
   DialogContent,
   DialogActions,
   Typography,
-  makeStyles,
   IconButton,
 } from "@material-ui/core";
 import NotListedLocationIcon from "@material-ui/icons/NotListedLocation";
-import { ConfirmDialogProps } from "./types";
-import Buttons from "./Buttons";
-
-const useStyles = makeStyles((theme) => ({
-  dialog: {
-    padding: theme.spacing(2),
-    position: "absolute",
-    top: theme.spacing(5),
-  },
-  dialogTitle: {
-    textAlign: "center",
-  },
-  dialogContent: {
-    textAlign: "center",
-  },
-  dialogAction: {
-    justifyContent: "center",
-  },
-  titleIcon: {
-    backgroundColor: theme.palette.secondary.light,
-    color: theme.palette.secondary.main,
-    "&:hover": {
-      backgroundColor: theme.palette.secondary.light,
-      cursor: "default",
-    },
-    "& .MuiSvgIcon-root": {
-      fontSize: "8rem",
-    },
-  },
-}));
+import { ConfirmDialogProps } from "../types";
+import Buttons from "../buttons/Buttons";
+import useStyles from "./confirmDialogStyle";
 
 const ConfirmDialog: React.FC<{
   confirmDialog: ConfirmDialogProps;

@@ -1,4 +1,4 @@
-import ConfirmDialog from "../components/ConfirmDialog";
+import ConfirmDialog from "../components/confirmDialog/ConfirmDialog";
 
 export default {
   title: "dialogs/ConfirmDialog",

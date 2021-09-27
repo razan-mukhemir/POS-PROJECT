@@ -1,5 +1,5 @@
 import CloseIcon from "@material-ui/icons/Close";
-import Buttons from "../components/Buttons";
+import Buttons from "../components/buttons/Buttons";
 
 export default {
   title: "controls/Buttons",

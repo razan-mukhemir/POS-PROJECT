@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Grid, TextField } from "@material-ui/core";
-import Form from "../../components/Form";
-import Buttons from "../../components/Buttons";
-import ErrorMessage from "../../components/error/ErrorMessage";
+import Form from "../../components/form/Form";
+import Buttons from "../../components/buttons/Buttons";
 import { addLeadingZeros, categoryNameValidate } from "./utils";
 
 export default function CategoryForm(props: any) {
@@ -34,12 +33,9 @@ export default function CategoryForm(props: any) {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setErrors(categoryNameValidate(values, categories));
-    /*console.log(values);
-    console.log(categories);
-    console.log(errors.categoryName);
-    console.log(values.categoryName);*/
-    if (errors.categoryName) {
+    const validationErrors = categoryNameValidate(values, categories);
+    setErrors(validationErrors);
+    if (!validationErrors.categoryName) {
       if (editOrAdd === "edit") {
         onSubmit({ ...values, categoryName: values.categoryName });
         resetForm();
@@ -78,10 +74,9 @@ export default function CategoryForm(props: any) {
             value={values.categoryName}
             onChange={handleInputChange}
             variant="outlined"
+            error={Boolean(errors.categoryName)}
+            helperText={errors.categoryName}
           />
-          {errors.categoryName ? (
-            <ErrorMessage errorMsg={errors.categoryName} />
-          ) : null}
           <div>
             <Buttons variant="contained" color="primary" type="submit">
               Submit

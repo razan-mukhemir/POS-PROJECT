@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { GridColDef } from "@mui/x-data-grid";
-import DataTable from "../../components/DataTable";
-import Notification from "../../components/Notification";
-import ConfirmDialog from "../../components/ConfirmDialog";
-import Popup from "../../components/Popup";
+import DataTable from "../../components/dataTable/DataTable";
+import Notification from "../../components/notification/Notification";
+import ConfirmDialog from "../../components/confirmDialog/ConfirmDialog";
+import Popup from "../../components/popup/Popup";
 import CategoryForm from "./CategoryForm";
-import Buttons from "../../components/Buttons";
-import Header from "../../components/Header";
+import Buttons from "../../components/buttons/Buttons";
+import Header from "../../components/header/Header";
 import {
   getCategories,
   deleteCategory,
@@ -17,12 +17,12 @@ import CategoryInputProps from "./type";
 
 const columns: GridColDef[] = [
   { field: "id", headerName: "ID" },
-  { field: "categoryName", headerName: "Category Name", width: 300 },
-  { field: "createdAt", headerName: "Created At", width: 300 },
+  { field: "categoryName", headerName: "Category Name", width: 200 },
+  { field: "createdAt", headerName: "Created At", width: 200 },
   {
     field: "actions",
     headerName: "Actions",
-    width: 300,
+    width: 200,
     renderCell: (params) => {
       const onOpenDeleteConfirmDialog = () => {
         setDeleteConfirmDialog({
@@ -68,7 +68,7 @@ let setOpenEditPopup: any;
 let editCategoryField: any;
 let setEditOrAddField: any;
 const Categories: React.FC = () => {
-  const [categories, setcategories] = useState([]);
+  const [categories, setCategories] = useState([]);
   const [notify, setNotify] = useState({
     isOpen: false,
     message: "",
@@ -110,7 +110,7 @@ const Categories: React.FC = () => {
   };
   const getAllCategories = async () => {
     let response = await getCategories();
-    setcategories(response.data);
+    setCategories(response.data);
   };
   const editCategoryData = async (id: number, category: CategoryInputProps) => {
     const response = await editCategory(id, category);
@@ -142,12 +142,18 @@ const Categories: React.FC = () => {
       },
     });
   };
+
+  const handleResetData = () => {
+    getAllCategories();
+  };
+
   return (
     <div>
       <Header
         openAddPopup={openAddPopup}
         data={categories}
-        setData={setcategories}
+        setData={setCategories}
+        resetData={handleResetData}
         felterTerm="categoryName"
       />
       <DataTable

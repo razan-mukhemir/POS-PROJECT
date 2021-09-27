@@ -3,23 +3,12 @@ import {
   Dialog,
   DialogTitle,
   DialogContent,
-  makeStyles,
   Typography,
   Button,
 } from "@material-ui/core";
 import CloseIcon from "@material-ui/icons/Close";
-import { PopupProps } from "./types";
-
-const useStyles = makeStyles((theme) => ({
-  dialogWrapper: {
-    padding: theme.spacing(2),
-    position: "absolute",
-    top: theme.spacing(5),
-  },
-  dialogTitle: {
-    paddingRight: "0px",
-  },
-}));
+import { PopupProps } from "../types";
+import useStyles from "./popupStyle";
 
 const Popup: React.FC<{
   children: React.ReactNode;

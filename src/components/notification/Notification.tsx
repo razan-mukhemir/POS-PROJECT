@@ -1,12 +1,8 @@
 import React from "react";
-import { Snackbar, makeStyles } from "@material-ui/core";
+import { Snackbar } from "@material-ui/core";
 import { Alert } from "@material-ui/lab";
-import { NotifyProps } from "./types";
-const useStyles = makeStyles((theme) => ({
-  root: {
-    top: theme.spacing(9),
-  },
-}));
+import { NotifyProps } from "../types";
+import useStyles from "./notificationStyle";
 
 const Notification: React.FC<{
   notify: NotifyProps;
