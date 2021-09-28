@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import { Container, InputBase } from "@material-ui/core";
 import Buttons from "../buttons/Buttons";
-import CategoryInputProps from "../../pages/categories/type";
+import { HeaderProps } from "./type";
 import useStyles from "./headerStyle";
 
-const Header: React.FC<{
-  openAddPopup: any;
-  data: CategoryInputProps[];
-  setData: any;
-  felterTerm: string;
-  resetData: any;
-}> = ({ openAddPopup, data, setData, felterTerm, resetData }) => {
+const Header: React.FC<HeaderProps> = ({
+  openAddPopup,
+  data,
+  setData,
+  felterTerm,
+  resetData,
+}) => {
   const classes = useStyles();
   const [searchTerm, setSearchTerm] = useState("");
 

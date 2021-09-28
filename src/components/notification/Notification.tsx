@@ -1,7 +1,7 @@
 import React from "react";
 import { Snackbar } from "@material-ui/core";
 import { Alert } from "@material-ui/lab";
-import { NotifyProps } from "../types";
+import { NotifyProps } from "./type";
 import useStyles from "./notificationStyle";
 
 const Notification: React.FC<{

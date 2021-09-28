@@ -5,9 +5,10 @@ import {
   DialogContent,
   Typography,
   Button,
+  Divider,
 } from "@material-ui/core";
 import CloseIcon from "@material-ui/icons/Close";
-import { PopupProps } from "../types";
+import { PopupProps } from "./type";
 import useStyles from "./popupStyle";
 
 const Popup: React.FC<{
@@ -20,7 +21,8 @@ const Popup: React.FC<{
   return (
     <Dialog
       open={openPopup.isOpen}
-      maxWidth="lg"
+      fullWidth
+      maxWidth="xs"
       classes={{ paper: classes.dialogWrapper }}
     >
       <DialogTitle className={classes.dialogTitle}>
@@ -38,7 +40,8 @@ const Popup: React.FC<{
           </Button>
         </div>
       </DialogTitle>
-      <DialogContent dividers>{children}</DialogContent>
+      <Divider variant="middle" />
+      <DialogContent>{children}</DialogContent>
     </Dialog>
   );
 };

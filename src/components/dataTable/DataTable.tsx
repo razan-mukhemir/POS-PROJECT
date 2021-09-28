@@ -1,13 +1,13 @@
 import React from "react";
-import { DataGrid, GridColDef } from "@mui/x-data-grid";
-import CategoryInputProps from "../../pages/categories/type";
+import { DataGrid } from "@mui/x-data-grid";
+import { DataTableProps } from "./type";
 import useStyles from "./dataTableStyle";
 
-const DataTable: React.FC<{
-  tableData: CategoryInputProps[];
-  tableHeader: GridColDef[];
-  autoPageSize: boolean;
-}> = ({ tableData, tableHeader, autoPageSize }) => {
+const DataTable: React.FC<DataTableProps> = ({
+  tableData,
+  tableHeader,
+  autoPageSize,
+}) => {
   const classes = useStyles();
   return (
     <div className={classes.root}>

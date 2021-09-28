@@ -8,7 +8,7 @@ import {
   IconButton,
 } from "@material-ui/core";
 import NotListedLocationIcon from "@material-ui/icons/NotListedLocation";
-import { ConfirmDialogProps } from "../types";
+import { ConfirmDialogProps } from "./type";
 import Buttons from "../buttons/Buttons";
 import useStyles from "./confirmDialogStyle";
 

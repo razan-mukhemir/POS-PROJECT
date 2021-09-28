@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Grid, TextField } from "@material-ui/core";
+import { Grid, TextField, Divider } from "@material-ui/core";
 import Form from "../../components/form/Form";
 import Buttons from "../../components/buttons/Buttons";
 import { addLeadingZeros, categoryNameValidate } from "./utils";
+import useStyles from "./categoryFormStyle";
 
 export default function CategoryForm(props: any) {
   const { editOrAdd, onSubmit, inputField, categories } = props;
@@ -63,10 +64,11 @@ export default function CategoryForm(props: any) {
     }
   };
 
+  const classes = useStyles();
   return (
     <Form onSubmit={handleSubmit}>
       <Grid container>
-        <Grid item xl={6}>
+        <Grid item xs={12}>
           <TextField
             id="outlined-basic"
             name="categoryName"
@@ -77,8 +79,14 @@ export default function CategoryForm(props: any) {
             error={Boolean(errors.categoryName)}
             helperText={errors.categoryName}
           />
-          <div>
-            <Buttons variant="contained" color="primary" type="submit">
+          <Divider classes={{ root: classes.divider }} />
+          <div className={classes.actionContainer}>
+            <Buttons
+              variant="contained"
+              color="primary"
+              type="submit"
+              classStyle={classes.buttonMargin}
+            >
               Submit
             </Buttons>
             <Buttons variant="contained" color="secondary" onClick={resetForm}>

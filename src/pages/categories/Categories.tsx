@@ -67,6 +67,7 @@ let deleteCategoryField: any;
 let setOpenEditPopup: any;
 let editCategoryField: any;
 let setEditOrAddField: any;
+
 const Categories: React.FC = () => {
   const [categories, setCategories] = useState([]);
   const [notify, setNotify] = useState({
