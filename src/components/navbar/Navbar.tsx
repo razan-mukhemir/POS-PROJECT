@@ -13,7 +13,7 @@ import {
 import MenuIcon from "@material-ui/icons/Menu";
 import ClearIcon from "@material-ui/icons/Clear";
 import NavbarList from "./NavbarList";
-import useStyles from "./NavbarStyle";
+import useStyles from "./style";
 
 const Navbar: React.FC = () => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLButtonElement>(null);

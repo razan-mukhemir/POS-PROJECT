@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { TextField, Button, Container, Typography } from "@material-ui/core";
-import useStyles from "./loginStyle";
+import { TextField, Container, Typography, Button } from "@material-ui/core";
+import useStyles from "./style";
 import { validation } from "./utils";
 import ShellPage from "../shellPage/ShellPage";
 
@@ -54,10 +54,9 @@ const Login: React.FC = () => {
                 InputLabelProps={{
                   className: classes.inputLabel,
                 }}
+                error={Boolean(errors.username)}
+                helperText={errors.username}
               />
-              {errors.username ? (
-                <p className={classes.errors}>{errors.username}</p>
-              ) : null}
               <TextField
                 type="password"
                 name="password"
@@ -70,15 +69,13 @@ const Login: React.FC = () => {
                 InputLabelProps={{
                   className: classes.inputLabel,
                 }}
+                error={Boolean(errors.password)}
+                helperText={errors.password}
               />
-              {errors.password ? (
-                <p className={classes.errors}>{errors.password}</p>
-              ) : null}
               <Button
                 variant="contained"
                 type="submit"
                 className={classes.loginBtn}
-                fullWidth
               >
                 Login
               </Button>

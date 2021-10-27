@@ -1,0 +1,155 @@
+{
+  "categories": [
+    {
+      "id": 92063,
+      "categoryName": "vvvccc487",
+      "createdAt": "2021/09/27 10:46:02"
+    },
+    {
+      "id": 123319,
+      "categoryName": "c33",
+      "createdAt": "2021/09/27 10:54:19"
+    },
+    {
+      "id": 83390,
+      "categoryName": "razan123",
+      "createdAt": "2021/10/09 12:11:15"
+    },
+    {
+      "id": 89509,
+      "categoryName": "eeeeeeeee",
+      "createdAt": "2021/10/09 13:29:16"
+    },
+    {
+      "id": 121974,
+      "categoryName": "124pl",
+      "createdAt": "2021/10/12 13:08:07"
+    },
+    {
+      "id": 91952,
+      "categoryName": "2020",
+      "createdAt": "2021/10/12 14:30:42"
+    },
+    {
+      "id": 70390,
+      "categoryName": "ty",
+      "createdAt": "2021/10/13 12:07:56"
+    },
+    {
+      "id": 96963,
+      "categoryName": "18",
+      "createdAt": "2021/10/17 11:41:51"
+    },
+    {
+      "id": 67931,
+      "categoryName": "vvvccc4887",
+      "createdAt": "2021/10/26 15:02:20"
+    },
+    {
+      "id": 100818,
+      "categoryName": "hy",
+      "createdAt": "2021/10/26 15:42:16"
+    },
+    {
+      "id": 98455,
+      "categoryName": "147",
+      "createdAt": "2021/10/26 18:09:42"
+    },
+    {
+      "id": 114145,
+      "categoryName": "razan129752",
+      "createdAt": "2021/10/27 10:24:36"
+    }
+  ],
+  "products": [
+    {
+      "id": 3,
+      "name": "fr",
+      "rawPrice": 10,
+      "price": "400",
+      "code": "AED-bnh-1234",
+      "color": "red",
+      "categoryName": "c33",
+      "description": "d1",
+      "stockCount": 7,
+      "expirationDate": "2023-03-10T11:59:00.000Z",
+      "image": "blob:http://localhost:3000/55fdf493-a57d-41be-8ae8-84a648cf186f"
+    },
+    {
+      "id": 83098,
+      "name": "roza",
+      "rawPrice": "077",
+      "price": "0614",
+      "code": "AWE-tgf-1458",
+      "color": "",
+      "categoryName": "eeeeeeeee",
+      "description": "d1",
+      "stockCount": "012",
+      "expirationDate": "2021-10-18T11:01:16.717Z",
+      "image": "blob:http://localhost:3000/54ed3922-3fa7-48f6-97b8-1c8390ea502f"
+    },
+    {
+      "id": 112334,
+      "name": "roza",
+      "rawPrice": 0,
+      "price": "10",
+      "code": "ABC7",
+      "color": "",
+      "categoryName": "18",
+      "description": "hhhhhhhhhhhhhhh",
+      "stockCount": "14",
+      "expirationDate": "2018-10-19T11:02:30.468Z"
+    },
+    {
+      "id": 107294,
+      "name": "gg",
+      "rawPrice": 0,
+      "price": "05",
+      "code": "ACD-ert-1487",
+      "color": "",
+      "categoryName": "",
+      "description": "",
+      "stockCount": 0,
+      "expirationDate": "2004-10-03T12:50:00.000Z"
+    },
+    {
+      "id": 98723,
+      "name": "roza",
+      "rawPrice": "15",
+      "price": "18",
+      "code": "bnhg",
+      "color": "",
+      "image": "blob:http://localhost:3000/ca2c7226-a92e-49ee-9b96-4d70aabeba15",
+      "categoryName": "",
+      "description": "",
+      "stockCount": 0,
+      "expirationDate": "2021-10-27T08:18:00.000Z"
+    },
+    {
+      "id": 107227,
+      "name": "gg",
+      "rawPrice": "11",
+      "price": "18",
+      "code": "ASD-okj-7654",
+      "color": "",
+      "image": "blob:http://localhost:3000/557cdf12-d79a-4d34-91c7-17acae426bc6",
+      "categoryName": "vvvccc4887",
+      "description": "product ",
+      "stockCount": "5",
+      "expirationDate": "2021-10-27T07:27:28.336Z"
+    },
+    {
+      "id": 124862,
+      "name": "razan",
+      "rawPrice": "15",
+      "price": "20",
+      "code": "NBV-okj-0000",
+      "color": "",
+      "image": "",
+      "categoryName": "124pl",
+      "description": "",
+      "stockCount": 0,
+      "expirationDate": "2021-10-27T08:00:53.104Z"
+    }
+  ]
+}
