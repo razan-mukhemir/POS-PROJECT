@@ -6,5 +6,16 @@ const useStyles = makeStyles((theme) => ({
       margin: theme.spacing(1),
     },
   },
+  actionContainer: {
+    display: "flex",
+    justifyContent: "center",
+  },
+  divider: {
+    marginTop: theme.spacing(1.5),
+    marginBottom: theme.spacing(1.5),
+  },
+  buttonMargin: {
+    marginRight: theme.spacing(2),
+  },
 }));
 export default useStyles;

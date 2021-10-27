@@ -9,13 +9,17 @@ import {
 } from "@material-ui/core";
 import CloseIcon from "@material-ui/icons/Close";
 import { PopupProps } from "./type";
-import useStyles from "./popupStyle";
+import useStyles from "./style";
 
-const Popup: React.FC<{
+const Popup = <T extends object>({
+  children,
+  openPopup,
+  setOpenPopup,
+}: {
   children: React.ReactNode;
-  openPopup: PopupProps;
+  openPopup: PopupProps<T>;
   setOpenPopup: any;
-}> = ({ children, openPopup, setOpenPopup }) => {
+}) => {
   const classes = useStyles();
 
   return (

@@ -1,13 +1,14 @@
 import React from "react";
 import { Snackbar } from "@material-ui/core";
 import { Alert } from "@material-ui/lab";
-import { NotifyProps } from "./type";
-import useStyles from "./notificationStyle";
+import { NotifyProps, SnackbarOriginProps } from "./type";
+import useStyles from "./style";
 
 const Notification: React.FC<{
   notify: NotifyProps;
-  setNotify: any;
-}> = ({ notify, setNotify }) => {
+  setNotify: (value: NotifyProps) => void;
+  snackbarOrigins: SnackbarOriginProps;
+}> = ({ notify, setNotify, snackbarOrigins }) => {
   const classes = useStyles();
   const handleClose = () => {
     setNotify({
@@ -21,7 +22,7 @@ const Notification: React.FC<{
       className={classes.root}
       open={notify.isOpen}
       autoHideDuration={3000}
-      anchorOrigin={{ vertical: "top", horizontal: "right" }}
+      anchorOrigin={snackbarOrigins}
       onClose={handleClose}
     >
       <Alert severity={notify.type} onClose={handleClose}>

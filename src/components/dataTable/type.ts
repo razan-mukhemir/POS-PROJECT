@@ -1,7 +1,6 @@
-import CategoryInputProps from "../../pages/categories/type";
 import { GridColDef } from "@mui/x-data-grid";
-export interface DataTableProps {
-  tableData: CategoryInputProps[];
+export interface DataTableProps<T> {
+  tableData: T[];
   tableHeader: GridColDef[];
   autoPageSize: boolean;
 }

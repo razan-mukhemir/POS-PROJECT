@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from "react";
-import { Grid, TextField, Divider } from "@material-ui/core";
-import Form from "../../components/form/Form";
-import Buttons from "../../components/buttons/Buttons";
+import { Grid, TextField, Divider, Button } from "@material-ui/core";
 import { addLeadingZeros, categoryNameValidate } from "./utils";
-import useStyles from "./categoryFormStyle";
+import CategoryInputProps from "./type";
+import useStyles from "./style";
 
-export default function CategoryForm(props: any) {
+export default function CategoryForm(props: {
+  editOrAdd: string;
+  onSubmit: (c: CategoryInputProps) => void;
+  inputField: CategoryInputProps;
+  categories: CategoryInputProps[];
+}) {
   const { editOrAdd, onSubmit, inputField, categories } = props;
   const [values, setValues] = useState({
     id: 0,
@@ -66,7 +70,7 @@ export default function CategoryForm(props: any) {
 
   const classes = useStyles();
   return (
-    <Form onSubmit={handleSubmit}>
+    <form className={classes.root} onSubmit={handleSubmit}>
       <Grid container>
         <Grid item xs={12}>
           <TextField
@@ -81,20 +85,20 @@ export default function CategoryForm(props: any) {
           />
           <Divider classes={{ root: classes.divider }} />
           <div className={classes.actionContainer}>
-            <Buttons
+            <Button
               variant="contained"
               color="primary"
               type="submit"
-              classStyle={classes.buttonMargin}
+              className={classes.buttonMargin}
             >
               Submit
-            </Buttons>
-            <Buttons variant="contained" color="secondary" onClick={resetForm}>
+            </Button>
+            <Button variant="contained" color="secondary" onClick={resetForm}>
               Reset
-            </Buttons>
+            </Button>
           </div>
         </Grid>
       </Grid>
-    </Form>
+    </form>
   );
 }

@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import { TextField, Container, Typography } from "@material-ui/core";
-import useStyles from "./loginStyle";
+import { TextField, Container, Typography, Button } from "@material-ui/core";
+import useStyles from "./style";
 import { validation } from "./utils";
 import ShellPage from "../shellPage/ShellPage";
-import Buttons from "../../components/buttons/Buttons";
 
 export const UsernameContext = React.createContext<string>("");
 const Login: React.FC = () => {
@@ -73,13 +72,13 @@ const Login: React.FC = () => {
                 error={Boolean(errors.password)}
                 helperText={errors.password}
               />
-              <Buttons
+              <Button
                 variant="contained"
                 type="submit"
-                classStyle={classes.loginBtn}
+                className={classes.loginBtn}
               >
                 Login
-              </Buttons>
+              </Button>
             </form>
           </Container>
         </div>

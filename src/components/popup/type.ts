@@ -1,6 +1,13 @@
-export interface PopupProps {
+export interface PopupProps<T> {
   isOpen: boolean;
   title: string;
-  inputField?: any;
-  onSubmit: any;
+  inputField?: T;
+  onSubmit: (value: T) => void;
+}
+
+export interface OpenViewPopupProps {
+  isOpen: boolean;
+  title: string;
+  inputField: any;
+  onSubmit: () => void;
 }

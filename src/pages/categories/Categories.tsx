@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { GridColDef } from "@mui/x-data-grid";
+import Button from "@material-ui/core/Button";
 import DataTable from "../../components/dataTable/DataTable";
 import Notification from "../../components/notification/Notification";
 import ConfirmDialog from "../../components/confirmDialog/ConfirmDialog";
 import Popup from "../../components/popup/Popup";
 import CategoryForm from "./CategoryForm";
-import Buttons from "../../components/buttons/Buttons";
-import Header from "../../components/header/Header";
+import TableHeader from "../../components/dataTable/tableHeader/TableHeader";
 import {
   getCategories,
   deleteCategory,
@@ -14,6 +14,9 @@ import {
   addCategory,
 } from "../../service/api";
 import CategoryInputProps from "./type";
+import { ConfirmDialogProps } from "../../components/confirmDialog/type";
+import { PopupProps } from "../../components/popup/type";
+import { NotifyProps } from "../../components/notification/type";
 
 const columns: GridColDef[] = [
   { field: "id", headerName: "ID" },
@@ -47,33 +50,33 @@ const columns: GridColDef[] = [
       };
       return (
         <div>
-          <Buttons
+          <Button
             onClick={onOpenDeleteConfirmDialog}
             variant="contained"
             color="secondary"
           >
             delete
-          </Buttons>
-          <Buttons onClick={onOpenEditPopup} variant="contained">
+          </Button>
+          <Button onClick={onOpenEditPopup} variant="contained">
             edit
-          </Buttons>
+          </Button>
         </div>
       );
     },
   },
 ];
-let setDeleteConfirmDialog: any;
-let deleteCategoryField: any;
-let setOpenEditPopup: any;
-let editCategoryField: any;
-let setEditOrAddField: any;
+let setDeleteConfirmDialog: (value: ConfirmDialogProps) => void;
+let deleteCategoryField: (id: number) => void;
+let setOpenEditPopup: (value: any) => void;
+let editCategoryField: (id: number, category: CategoryInputProps) => void;
+let setEditOrAddField: (value: string) => void;
 
 const Categories: React.FC = () => {
-  const [categories, setCategories] = useState([]);
-  const [notify, setNotify] = useState({
+  const [categories, setCategories] = useState<CategoryInputProps[]>([]);
+  const [notify, setNotify] = useState<NotifyProps>({
     isOpen: false,
     message: "",
-    type: "",
+    type: "success",
   });
   const [confirmDialog, setConfirmDialog] = useState({
     isOpen: false,
@@ -84,7 +87,7 @@ const Categories: React.FC = () => {
   const [openPopup, setOpenPopup] = useState({
     isOpen: false,
     title: "",
-    inputField: {},
+    inputField: { id: 0, categoryName: "", createdAt: "" },
     onSubmit: (category: CategoryInputProps) => {},
   });
   const [editOrAdd, setEditOrAdd] = useState("");
@@ -137,7 +140,7 @@ const Categories: React.FC = () => {
       ...openPopup,
       isOpen: true,
       title: "Add Category Form",
-      inputField: { categoryName: "", createdAt: "" },
+      inputField: { id: 0, categoryName: "", createdAt: "" },
       onSubmit: (category: CategoryInputProps) => {
         addCategoryData(category);
       },
@@ -150,13 +153,17 @@ const Categories: React.FC = () => {
 
   return (
     <div>
-      <Header
+      <TableHeader
         openAddPopup={openAddPopup}
         data={categories}
         setData={setCategories}
         resetData={handleResetData}
         felterTerm="categoryName"
-      />
+      >
+        <Button color="primary" variant="contained" onClick={openAddPopup}>
+          Add Category
+        </Button>
+      </TableHeader>
       <DataTable
         tableData={categories}
         tableHeader={columns}
@@ -170,7 +177,11 @@ const Categories: React.FC = () => {
           categories={categories}
         />
       </Popup>
-      <Notification notify={notify} setNotify={setNotify} />
+      <Notification
+        notify={notify}
+        setNotify={setNotify}
+        snackbarOrigins={{ vertical: "top", horizontal: "right" }}
+      />
       <ConfirmDialog
         confirmDialog={confirmDialog}
         setConfirmDialog={setConfirmDialog}

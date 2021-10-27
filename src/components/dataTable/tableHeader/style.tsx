@@ -1,9 +1,8 @@
 import { makeStyles, alpha } from "@material-ui/core/styles";
 const useStyles = makeStyles((theme) => ({
   root: {
-    display: "flex",
+    position: "relative",
     padding: theme.spacing(5, 0, 5, 0),
-    justifyContent: "space-between",
     width: "70%",
     margin: "auto",
     [theme.breakpoints.down("sm")]: {
@@ -11,6 +10,9 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   search: {
+    display: "inline-block",
+    position: "absolute",
+    right: 0,
     borderRadius: theme.shape.borderRadius,
     backgroundColor: alpha(theme.palette.common.black, 0.15),
     "&:hover": {

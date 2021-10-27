@@ -6,15 +6,15 @@ import {
   DialogActions,
   Typography,
   IconButton,
+  Button,
 } from "@material-ui/core";
 import NotListedLocationIcon from "@material-ui/icons/NotListedLocation";
 import { ConfirmDialogProps } from "./type";
-import Buttons from "../buttons/Buttons";
-import useStyles from "./confirmDialogStyle";
+import useStyles from "./style";
 
 const ConfirmDialog: React.FC<{
   confirmDialog: ConfirmDialogProps;
-  setConfirmDialog: any;
+  setConfirmDialog: (value: ConfirmDialogProps) => void;
 }> = ({ confirmDialog, setConfirmDialog }) => {
   const classes = useStyles();
 
@@ -30,19 +30,19 @@ const ConfirmDialog: React.FC<{
         <Typography variant="subtitle2">{confirmDialog.subTitle}</Typography>
       </DialogContent>
       <DialogActions className={classes.dialogAction}>
-        <Buttons
+        <Button
           variant="contained"
           onClick={() => setConfirmDialog({ ...confirmDialog, isOpen: false })}
         >
           No
-        </Buttons>
-        <Buttons
+        </Button>
+        <Button
           variant="contained"
           color="secondary"
           onClick={confirmDialog.onConfirm}
         >
           Yes
-        </Buttons>
+        </Button>
       </DialogActions>
     </Dialog>
   );

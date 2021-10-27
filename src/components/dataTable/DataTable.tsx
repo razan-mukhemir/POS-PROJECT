@@ -1,20 +1,16 @@
 import React from "react";
 import { DataGrid } from "@mui/x-data-grid";
 import { DataTableProps } from "./type";
-import useStyles from "./dataTableStyle";
+import useStyles from "./style";
 
-const DataTable: React.FC<DataTableProps> = ({
-  tableData,
-  tableHeader,
-  autoPageSize,
-}) => {
+const DataTable = <T extends object>(props: DataTableProps<T>) => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
       <DataGrid
-        rows={tableData}
-        columns={tableHeader}
-        autoPageSize={autoPageSize}
+        rows={props.tableData}
+        columns={props.tableHeader}
+        autoPageSize={props.autoPageSize}
       />
     </div>
   );

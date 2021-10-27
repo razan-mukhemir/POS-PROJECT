@@ -9,7 +9,7 @@ import HomeIcon from "@material-ui/icons/Home";
 import ShopIcon from "@material-ui/icons/Shop";
 import AccountBoxIcon from "@material-ui/icons/AccountBox";
 import { Link } from "react-router-dom";
-import useStyles from "./NavbarStyle";
+import useStyles from "./style";
 import { UsernameContext } from "../../pages/login/Login";
 const NavbarList: React.FC = () => {
   const classes = useStyles();
@@ -24,7 +24,7 @@ const NavbarList: React.FC = () => {
           </Link>
         </ListItem>
         <ListItem>
-          <Link to="/Products" className={classes.links}>
+          <Link to="/products" className={classes.links}>
             <ShopIcon className={classes.appBarListItemIcon} />
             Product
           </Link>
@@ -42,13 +42,13 @@ const NavbarList: React.FC = () => {
           </Link>
         </ListItem>
         <ListItem>
-          <Link to="/Expenses" className={classes.links}>
+          <Link to="/expenses" className={classes.links}>
             <AttachMoneyIcon className={classes.appBarListItemIcon} />
             Expense
           </Link>
         </ListItem>
         <ListItem>
-          <Link to="/Categories" className={classes.links}>
+          <Link to="/categories" className={classes.links}>
             <CategoryIcon className={classes.appBarListItemIcon} />
             Categories
           </Link>
